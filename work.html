@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio | Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #007aff;
+            --secondary-text: #666666;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            position: relative;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: 8px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: opacity 0.2s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        nav a.active {
+            font-weight: 800;
+        }
+
+        .btn-connect {
+            background-color: var(--text-color);
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+        }
+
+        .btn-connect:hover {
+            opacity: 0.8 !important;
+        }
+
+        main {
+            padding: 60px 0;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .project {
+            margin-bottom: 40px;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 400px;
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .project:hover .project-image {
+            transform: scale(1.02);
+        }
+
+        .project-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-category {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            margin-top: 100px;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 0;
+            }
+            .work-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .project-image {
+                height: 300px;
+            }
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="homepage.html" class="logo">Sabrina Huffman</a>
+            <nav>
+                <ul>
+                    <div class="nav-indicator"></div>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="work.html" class="active">Design</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="http://127.0.0.1:3000/contact.html" class="btn-connect">Let's Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>Design</h1>
+            <section class="work-grid">
+                <article class="project">
+                    <div class="project-image"></div>
+                    <p class="project-title">Quaynect</p>
+                    <p class="project-category">Service Design -</p>
+                </article>
+                <article class="project">
+                    <div class="project-image"></div>
+                    <p class="project-title">Possibilities Palettes</p>
+                    <p class="project-category">Human-Centered Design — 2024</p>
+                </article>
+                <article class="project">
+                    <div class="project-image"></div>
+                    <p class="project-title">Verdoir</p>
+                    <p class="project-category">Product — 2025</p>
+                </article>
+                <article class="project">
+                    <div class="project-image"></div>
+                    <p class="project-title">Editorial Design</p>
+                    <p class="project-category">Print — 2025</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Sabrina Huffman. All rights reserved.</p>
+            <p>Built with focus and simplicity.</p>
+        </footer>
+    </div>
+    <script>
+        // Navigation Indicator logic
+        const indicator = document.querySelector('.nav-indicator');
+        const items = document.querySelectorAll('nav a:not(.btn-connect)');
+        const activeItem = document.querySelector('nav a.active:not(.btn-connect)');
+
+        function updateIndicator(element) {
+            if (!element) return;
+            const rect = element.getBoundingClientRect();
+            const parentRect = element.closest('ul').getBoundingClientRect();
+            
+            indicator.style.width = `${rect.width}px`;
+            indicator.style.left = `${rect.left - parentRect.left}px`;
+            indicator.style.opacity = '1';
+        }
+
+        // Initial positioning
+        window.addEventListener('load', () => {
+            updateIndicator(activeItem);
+        });
+
+        // Resizing window should reposition the line
+        window.addEventListener('resize', () => {
+            updateIndicator(document.querySelector('nav a.active:not(.btn-connect)'));
+        });
+
+        // Optional: Hover effect for sliding line
+        items.forEach(item => {
+            item.addEventListener('mouseenter', (e) => {
+                updateIndicator(e.target);
+            });
+            item.addEventListener('mouseleave', () => {
+                updateIndicator(document.querySelector('nav a.active:not(.btn-connect)'));
+            });
+        });
+    </script>
+</body>
+</html>
