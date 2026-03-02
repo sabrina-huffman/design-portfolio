@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sabrina Huffman Design Portfolio | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --accent-color: #007aff;
+            --secondary-text: #666666;
+            --spacing-unit: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: var(--text-color);
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            position: relative;
+        }
+
+        .nav-indicator {
+            position: absolute;
+            bottom: 8px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            pointer-events: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: opacity 0.2s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+        }
+
+        nav a.active {
+            font-weight: 800;
+        }
+
+        .btn-connect {
+            background-color: var(--text-color);
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+        }
+
+        .btn-connect:hover {
+            opacity: 0.8 !important;
+        }
+
+        main {
+            padding: 100px 0;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            min-height: 60vh;
+        }
+
+        .hero {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+        }
+
+        .recent-work {
+            flex: 1;
+            padding: 0;
+        }
+
+        .recent-work h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--secondary-text);
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            position: relative;
+        }
+
+        .slide-content {
+            z-index: 2;
+            color: var(--text-color);
+        }
+
+        .slide-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            border: none;
+        }
+
+        .dot.active {
+            background-color: var(--text-color);
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+            margin-top: 100px;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+            }
+            .hero {
+                max-width: 100%;
+            }
+            .recent-work {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 0;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">Sabrina Huffman</a>
+            <nav>
+                <div class="nav-container">
+                    <ul>
+                        <div class="nav-indicator"></div>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="work.html">Design</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="http://127.0.0.1:3000/contact.html" class="btn-connect">Let's Connect</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="hero-section">
+                <section class="recent-work">
+                    <h2>Recent Work</h2>
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="slide-content">
+                                    <h3>Project One</h3>
+                                    <p>Brand Identity & Web Design</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="slide-content">
+                                    <h3>Project Two</h3>
+                                    <p>Mobile Application Design</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="slide-content">
+                                    <h3>Project Three</h3>
+                                    <p>Product Strategy & UX Research</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-dots">
+                        <button class="dot active" onclick="jumpToSlide(0)"></button>
+                        <button class="dot" onclick="jumpToSlide(1)"></button>
+                        <button class="dot" onclick="jumpToSlide(2)"></button>
+                    </div>
+                </section>
+
+                <section class="hero">
+                    <h1>Creating meaningful design through collaboration.</h1>
+                    <p></p>
+                </section>
+            </div>
+        </main>
+
+        <script>
+            // Navigation Indicator logic
+            const indicator = document.querySelector('.nav-indicator');
+            const items = document.querySelectorAll('nav a:not(.btn-connect)');
+            const activeItem = document.querySelector('nav a.active:not(.btn-connect)');
+
+            function updateIndicator(element) {
+                if (!element) return;
+                const rect = element.getBoundingClientRect();
+                const parentRect = element.closest('ul').getBoundingClientRect();
+                
+                indicator.style.width = `${rect.width}px`;
+                indicator.style.left = `${rect.left - parentRect.left}px`;
+                indicator.style.opacity = '1';
+            }
+
+            // Initial positioning
+            window.addEventListener('load', () => {
+                updateIndicator(activeItem);
+            });
+
+            // Resizing window should reposition the line
+            window.addEventListener('resize', () => {
+                updateIndicator(document.querySelector('nav a.active:not(.btn-connect)'));
+            });
+
+            // Optional: Hover effect for sliding line
+            items.forEach(item => {
+                item.addEventListener('mouseenter', (e) => {
+                    updateIndicator(e.target);
+                });
+                item.addEventListener('mouseleave', () => {
+                    updateIndicator(document.querySelector('nav a.active:not(.btn-connect)'));
+                });
+            });
+
+            let currentSlide = 0;
+            const track = document.getElementById('carousel-track');
+            const dots = document.querySelectorAll('.dot');
+            const totalSlides = 3;
+
+            function jumpToSlide(index) {
+                currentSlide = index;
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === currentSlide);
+                });
+            }
+
+            // Optional auto-play
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
+        </script>
+
+        <footer>
+            <p>&copy; 2026 Sabrina Huffman. All rights reserved.</p>
+            <p>Built with focus and simplicity.</p>
+        </footer>
+    </div>
+</body>
+</html>
